@@ -5,24 +5,38 @@ if (Meteor.isServer) {
 Meteor.methods({
   update:function(root) {
     root = root || "";
-    // Load in Github
-    var GithubApi = Meteor.require('github');
-    var github = new GithubApi({
+    // Load fs
+    var Fs = Meteor.require('fs');
+
+    // Load git
+    var Repo = Meteor.require('git').Repo;
+    var Git = Meteor.require('git').Git;
+    var Commit = Meteor.require('git').Commit;
+    var GitFileOperations = Meteor.require('git').GitFileOperations;
+
+    // Load Github
+    var Github = new Meteor.require('github')({
       version: "3.0.0"
     });
+
     // Load in xml2js
     var parseXml = Meteor.require('xml2js').parseString;
-    // Pull latest from git
-    
-    // Download from US code website into raw
 
-    // Parse US Code
+    Meteor.sync(function(done){
+      // Download from US code website into raw
 
-    // Shuffle into appropriate directories
+      // Parse US Code
 
-    // Commit
+      // Shuffle into appropriate directories
 
-    // Upload
+      // Commit
+
+      // Upload
+
+      // Finish
+      done();
+    });
+
 
   }
 });

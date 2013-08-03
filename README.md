@@ -9,11 +9,12 @@ To run the scripts on Mac:
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
     # Install npm
     brew install npm
+    # Install git
+    brew install git
     # Install meteor
     curl https://install.meteor.com | /bin/sh
     # Install meteorite
     sudo -H npm install -g meteorite
-    # Run the web app
+    # Run and open the web app
     cd www
-    mrt
-    open http://localhost:3000
+    mrt & open http://localhost:3000
